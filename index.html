@@ -21,89 +21,100 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather website</title>
-
   </head>
   <body>
-    <div class="container">
-    <form class="search-line" id="search-line">
-      <div class="row">
-        <div class="col-6">
-          <input
-            type="search"
-            placeholder="Type a city"
-            class="form-control"
-            id="weather-engine"
-          />
-        </div>
-        <div class="col-3">
-          <input 
-          type="submit" 
-          value="Search"
-          class="form-control btn btn-primary w-100"
-          id="search-weather"
-          />
-        </div>
-         <div class="col-3">
-          <input 
-          type="submit" 
-          value="Current"
-          class="btn btn-success"
-          id="current-location"
-          />
+    <div class="mainBody">
+      <div class="container">
+        <form class="search-line" id="search-line">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Type a city"
+                class="form-control"
+                id="weather-engine"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary w-100"
+                id="search-weather"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Current"
+                class="btn btn-success"
+                id="current-location"
+              />
+            </div>
+          </div>
+        </form>
+
+        <h1 class="city">
+          <i class="fa-solid fa-location-dot"></i>
+          <span id="chosen-city">Kyiv</span>
+          <span id="current-temperature"></span>
+          <span class="tempValues"><span id="celsius">°C</span> </span>
+        </h1>
+
+        <div class="row">
+          <div class="col-6 day" id="current-date">Tue, May 31, 16:00</div>
+
+          <div class="col-6 additional">
+            <ul>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span>km/h</li>
+            </ul>
+          </div>
+
+          <div class="weather">
+            <div class="row">
+              <div class="col-4">Wed</div>
+              <div class="col-4">20°C</div>
+              <div class="col-4">☁️</div>
+            </div>
+
+            <div class="row">
+              <div class="col-4">Thu</div>
+              <div class="col-4">18°C</div>
+              <div class="col-4">🌧️</div>
+            </div>
+
+            <div class="row">
+              <div class="col-4">Fri</div>
+              <div class="col-4">21°C</div>
+              <div class="col-4">☀️</div>
+            </div>
+
+            <div class="row">
+              <div class="col-4">Sat</div>
+              <div class="col-4">20°C</div>
+              <div class="col-4">☁️</div>
+            </div>
+
+            <div class="row">
+              <div class="col-4">Sun</div>
+              <div class="col-4">17°C</div>
+              <div class="col-4">⛅</div>
+            </div>
+          </div>
         </div>
       </div>
-    </form>
-
-    <h1 class="city">
-      <i class="fa-solid fa-location-dot"></i>
-      <span id="chosen-city">Kyiv</span> 
-      <span id="current-temperature"></span>
-      <span class="tempValues"><span id="celsius">°C</span> 
-      </span>
-    </h1>
-
-    <div class="row">
-      <div class="col-6 day" id="current-date"> Tue, May 31, 16:00 </div>
-
-      <div class="col-6 additional">
-        <ul>
-          <li>Humidity: <span  id="humidity"></span>%</li>
-          <li>Wind: <span  id="wind"></span>km/h</li>
-        </ul>
-      </div>
-
-      <div class="weather">
-        <div class="row">
-          <div class="col-4">Wed</div>
-          <div class="col-4">20°C</div>
-          <div class="col-4">☁️</div>
-        </div>
-
-        <div class="row">
-          <div class="col-4">Thu</div>
-          <div class="col-4">18°C</div>
-          <div class="col-4">🌧️</div>
-        </div>
-
-        <div class="row">
-          <div class="col-4">Fri</div>
-          <div class="col-4">21°C</div>
-          <div class="col-4">☀️</div>
-        </div>
-
-        <div class="row">
-          <div class="col-4">Sat</div>
-          <div class="col-4">20°C</div>
-          <div class="col-4">☁️</div>
-        </div>
-
-        <div class="row">
-          <div class="col-4">Sun</div>
-          <div class="col-4">17°C</div>
-          <div class="col-4">⛅</div>
-        </div>
-      </div>
+      <script src="src.js"></script>
     </div>
-    <script src="src.js" ></script>
+    <div class="lastNote">
+      <small>
+        <a
+          href="https://github.com/solomiiasabat/week7-homework"
+          target="_blank"
+          >Open-source code
+        </a>
+        by Solomiia Sabat
+      </small>
+    </div>
   </body>
 </html>
