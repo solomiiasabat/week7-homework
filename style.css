@@ -1,0 +1,58 @@
+body {
+  margin: 5% 30%;
+  padding: 10px 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.search-line {
+  margin: 10px 30px;
+}
+
+.city {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+.tempValues {
+  font-size: 20px;
+  position: relative;
+  top: -20px;
+  left: -10px;
+}
+
+#current-date {
+  position: relative;
+  left: 35px;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+  position: relative;
+  left: 30px;
+}
+
+.day {
+  font-size: 20px;
+  line-height: -2px;
+}
+
+.additional {
+  font-size: 13px;
+}
+
+.weather {
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 30px auto;
+  max-width: 400px;
+}
