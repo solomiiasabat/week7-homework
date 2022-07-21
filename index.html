@@ -46,7 +46,7 @@
             <div class="col-3">
               <input
                 type="submit"
-                value="Current"
+                value="Your city"
                 class="btn btn-success"
                 id="current-location"
               />
@@ -58,11 +58,22 @@
           <i class="fa-solid fa-location-dot"></i>
           <span id="chosen-city">Kyiv</span>
           <span id="current-temperature"></span>
-          <span class="tempValues"><span id="celsius">°C</span> </span>
+          <span class="tempValues"
+            ><span id="celsius">°C</span>
+            <img src="#" id="weather-icon"></img>
+          </span>
         </h1>
 
         <div class="row">
-          <div class="col-6 day" id="current-date">Tue, May 31, 16:00</div>
+          <div class="col-6 day" class="clearfix">
+            <ul class="float-left">
+              <li id="current-date">Tuesday, May 31</li>
+              <li>
+                <span id="current-time">16:00</span>,
+                <span id="weather-description"></span>
+              </li>
+            </ul>
+          </div>
 
           <div class="col-6 additional">
             <ul>
@@ -71,36 +82,7 @@
             </ul>
           </div>
 
-          <div class="weather">
-            <div class="row">
-              <div class="col-4">Wed</div>
-              <div class="col-4">20°C</div>
-              <div class="col-4">☁️</div>
-            </div>
-
-            <div class="row">
-              <div class="col-4">Thu</div>
-              <div class="col-4">18°C</div>
-              <div class="col-4">🌧️</div>
-            </div>
-
-            <div class="row">
-              <div class="col-4">Fri</div>
-              <div class="col-4">21°C</div>
-              <div class="col-4">☀️</div>
-            </div>
-
-            <div class="row">
-              <div class="col-4">Sat</div>
-              <div class="col-4">20°C</div>
-              <div class="col-4">☁️</div>
-            </div>
-
-            <div class="row">
-              <div class="col-4">Sun</div>
-              <div class="col-4">17°C</div>
-              <div class="col-4">⛅</div>
-            </div>
+          <div class="weather-forecast" id="forecast">
           </div>
         </div>
       </div>
@@ -111,8 +93,8 @@
         <a
           href="https://github.com/solomiiasabat/week7-homework"
           target="_blank"
-          >Open-source code
-        </a>
+          >Open-source code</a
+        >
         by Solomiia Sabat
       </small>
     </div>

@@ -2,7 +2,15 @@
 
 let weatherCurrentDay = new Date();
 
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let whatDay = days[weatherCurrentDay.getDay()];
 
 let months = [
@@ -31,9 +39,41 @@ if (whatMinutes < 10) {
 }
 
 let currentDate = document.querySelector("#current-date");
-currentDate.innerHTML = `${whatDay}, ${whatMonth} ${whatDate}, ${whatHour}:${whatMinutes}`;
+currentDate.innerHTML = `${whatDay}, ${whatMonth} ${whatDate}`;
 
-//Challenge 2
+let t;
+
+let currentTime = document.querySelector("#current-time");
+currentTime.innerHTML = `${whatHour}:${whatMinutes}`;
+
+function weatherForNextDays() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
 
 function defaultCity(city) {
   let apiKey = "8542913933d6e9526040ad6e6691ada1";
@@ -49,6 +89,14 @@ function displayWeather(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
@@ -75,3 +123,4 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 defaultCity("Kyiv");
+weatherForNextDays();

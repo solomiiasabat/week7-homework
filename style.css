@@ -13,11 +13,19 @@ body {
   margin: 10px 30px;
 }
 
-.city {
-  font-size: 50px;
+.current-location {
   margin-top: 10px;
 }
 
+.city {
+  font-size: 45px;
+  margin-top: 15px;
+}
+
+#weather-icon {
+  max-width: 15%;
+  margin-top: 10px;
+}
 .tempValues {
   font-size: 20px;
   position: relative;
@@ -27,7 +35,10 @@ body {
 
 #current-date {
   position: relative;
-  left: 35px;
+}
+
+ul {
+  margin-top: -15px;
 }
 
 li {
@@ -37,27 +48,38 @@ li {
   left: 30px;
 }
 
+#current-time,
+#weather-description {
+  font-size: 13px;
+}
+
 .day {
-  font-size: 20px;
+  font-size: 13px;
   line-height: -2px;
 }
 
 .additional {
   font-size: 13px;
+  color: #a9a6b3;
 }
 
-.weather {
+.weather-forecast {
   text-align: center;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 40px;
+  margin-bottom: 10px;
+}
 
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 5%;
-  max-width: 400px;
-  display: block;
-  margin: 0 auto 30px auto;
-  max-width: 400px;
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-max {
+  font-weight: bold;
+}
+
+.weather-forecast-temperature-min {
+  color: #a9a6b3;
 }
 
 .lastNote {
