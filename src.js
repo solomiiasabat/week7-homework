@@ -46,7 +46,8 @@ let t;
 let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${whatHour}:${whatMinutes}`;
 
-function weatherForNextDays() {
+function weatherForNextDays(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
 
@@ -81,6 +82,12 @@ function defaultCity(city) {
   axios.get(apiUrl).then(displayWeather);
 }
 
+function getForecast(coordinates) {
+  let apiKey = "8542913933d6e9526040ad6e6691ada1";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&appid=metric`;
+  axios.get(apiUrl).then(weatherForNextDays);
+}
+
 function displayWeather(response) {
   document.querySelector("#chosen-city").innerHTML = response.data.name;
   document.querySelector("#current-temperature").innerHTML = Math.round(
@@ -98,6 +105,8 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchLocation(position) {
@@ -123,4 +132,3 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 defaultCity("Kyiv");
-weatherForNextDays();
